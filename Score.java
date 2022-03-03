@@ -2,21 +2,17 @@
  * Holds the scores for the trivia game
  */
 public class Score {
-    private int userScore = 0;
-    private int compScore = 0;
-    private int totalGames = 0;
+    private int userScore;
+    private int compScore;
+    private int totalGames;
 
     /**
-     * Initializes all the scores
-     * 
-     * @param userScore  The score the player got
-     * @param compScore  The scroe the computer got
-     * @param totalGames The total number of games played
+     * Initializes scores to 0
      */
-    public Score(int userScore, int compScore, int totalGames) {
-        this.userScore = userScore;
-        this.compScore = compScore;
-        this.totalGames = totalGames;
+    public Score(){
+        this.userScore = 0;
+        this.compScore = 0;
+        this.totalGames = 0;
     }
 
     /**

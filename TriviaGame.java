@@ -7,12 +7,11 @@ import java.util.Random;
  * Holds all the information and logic for a True/False Trivia Game
  */
 class TriviaGame {
-    private String[][] questions = new String[20][2];
-    private int count = 0;
+    private String[][] questions;
+    private int count;
     private Random rand;
-    private int score = 0;
-    private boolean playAgain = true;
-    private Score myScore = new Score(0, 0, 0);
+    private boolean playAgain;
+    private Score myScore;
 
     /**
      * Creates a new Trivia Game
@@ -20,6 +19,10 @@ class TriviaGame {
      */
     public TriviaGame() {
         rand = new Random();
+        questions = new String[20][2];
+        count = 0;
+        playAgain = true;
+        myScore = new Score();
 
         try {
             File file = new File("questions.txt");
@@ -98,11 +101,8 @@ class TriviaGame {
         System.out.print("Do you want to play again, (Y)es or (N)o: ");
         String contInput = in.nextLine().trim().toLowerCase();
 
-        if (contInput.equals("y") || contInput.equals("yes")) {
-            playAgain = true;
-        } else {
-            playAgain = false;
-        }
+        if (contInput.equals("y") || contInput.equals("yes")) playAgain = true;
+        else playAgain = false;
     }
 
     /**
